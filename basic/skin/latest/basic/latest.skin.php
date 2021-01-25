@@ -6,29 +6,29 @@ add_stylesheet('<link rel="stylesheet" href="'.$latest_skin_url.'/style.css">', 
 $list_count = (is_array($list) && $list) ? count($list) : 0;
 ?>
 
-<div class="lat">
-    <h2 class="lat_title"><a href="<?php echo get_pretty_url($bo_table); ?>"><?php echo $bo_subject ?></a></h2>
+<div class="notice01">
+    <h2 class="notice01_title"><a href="<?php echo get_pretty_url($bo_table); ?>"><?php echo $bo_subject ?>공지사항</a></h2>
+    <a href="<?php echo get_pretty_url($bo_table); ?>" class="lt_more"><span class="sound_only"><?php echo $bo_subject ?></span>더보기</a>
     <ul>
     <?php for ($i=0; $i<$list_count; $i++) {  ?>
-        <li class="basic_li">
+        <li class="notice_li">
 
-          <a href="<? echo $list[$i]['href']?>"<? echo $list[$i]['subject']; ?>11111</a>
-          <?php echo $list[$i]['name'] ?>
-          <?php echo $list[$i]['datetime2'] ?>
+            <a href="<? echo  $list[$i]['href']?>">
+              <h3><?echo $list[$i]['subject'];?></h3>
+              <p>
+              <?php echo $list[$i]['name'] ?>
+              <?php echo $list[$i]['datetime2'] ?></p>
+            </a>
 
-            <div class="lt_info">
-				<span class="lt_nick"><</span>
-            	<span class="lt_date"></span>
-            </div>
         </li>
     <?php }  ?>
 
     <?php if ($list_count == 0) { //게시물이 없을 때  ?>
-    <li class="empty_li">게시물이 없습니다.</li>
+      <li class="empty_li">게시물이 없습니다.</li>
     <?php }  ?>
 
 
     </ul>
-    <a href="<?php echo get_pretty_url($bo_table); ?>" class="lt_more"><span class="sound_only"><?php echo $bo_subject ?></span>더보기</a>
+
 
 </div>
